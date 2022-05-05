@@ -2,17 +2,9 @@ const sumAll = function(a, b) {
     if (typeof a !== "number" || typeof b !== "number") return "ERROR"
 
     let numbers = [];
-    let min;
-    let max;
     let sum = 0;
-
-    if (a < b) {
-        min = a;
-        max = b;
-    } else {
-        min = b;
-        max = a;
-    }
+    const min = (a < b) ? a : b;
+    const max = (a > b) ? a : b;
 
     if (min < 0) return "ERROR";
     
