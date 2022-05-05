@@ -7,6 +7,8 @@ const sumAll = function(a, ...params) {
     const max = params[params.length - 1];
     let sum = 0;
 
+    if (min < 0) return "ERROR";
+    
     for (let i = min; i <= max; i++) {
         numbers.push(i);
     }
