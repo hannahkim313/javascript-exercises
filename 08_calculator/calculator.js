@@ -12,12 +12,18 @@ const sum = function(numbers) {
 	for (let i = 0; i < numbers.length; i++) {
         sum += numbers[i];
     }
-    
+
     return sum;
 };
 
-const multiply = function() {
+const multiply = function(numbers) {
+    let product = 1;
 
+    for (let i = 0; i < numbers.length; i ++) {
+        product *= numbers[i];
+    }
+
+    return product;
 };
 
 const power = function() {
