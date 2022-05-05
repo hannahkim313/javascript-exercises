@@ -30,8 +30,21 @@ const power = function(a, b) {
 	return a ** b;
 };
 
-const factorial = function() {
-	
+const factorial = function(a) {
+    if (a === 0) return 1;
+
+	let numbers = [];
+    let product = 1;
+
+    for (let i = 1; i <= a; i++) {
+        numbers.push(i);
+    }
+
+    for (let i = 0; i < numbers.length; i++) {
+        product *= numbers[i];
+    }
+
+    return product;
 };
 
 // Do not edit below this line
