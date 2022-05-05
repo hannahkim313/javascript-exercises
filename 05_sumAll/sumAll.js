@@ -1,11 +1,16 @@
-const sumAll = function(a, ...params) {
-    params.unshift(a);
-    params.sort();
-
+const sumAll = function(a, b) {
     let numbers = [];
-    const min = params[0];
-    const max = params[params.length - 1];
+    let min;
+    let max;
     let sum = 0;
+
+    if (a < b) {
+        min = a;
+        max = b;
+    } else {
+        min = b;
+        max = a;
+    }
 
     if (min < 0) return "ERROR";
     
