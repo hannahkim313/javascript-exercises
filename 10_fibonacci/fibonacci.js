@@ -1,4 +1,6 @@
 const fibonacci = function(a) {
+    if (a < 0) return "OOPS";
+    
     const numbers = [];
 
     for (let i = 0; i < 25; i++) {
