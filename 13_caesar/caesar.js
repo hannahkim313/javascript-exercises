@@ -11,9 +11,18 @@ const caesar = function(string, shift) {
         chars.push(string.charCodeAt(i));
 
         if (chars[i] >= 65 && chars[i] <= 90) {
-            chars[i] = (chars[i] + shift > 90) ?
-                upperUni[(shift - (upperUni[25] - chars[i])) - 1] :
-                chars[i] = chars[i] + shift;
+            if (shift < 0) {
+                if (chars[i] + shift < 65) {
+                    chars[i] = upperUni[upperUni.length + shift +
+                        upperUni.findIndex(code => code === chars[i])];
+                } else  {
+                    chars[i] = upperUni.find(code => code === chars[i] + shift);
+                }
+            } else {
+                chars[i] = (chars[i] + shift > 90) ?
+                    upperUni[(shift - (upperUni[25] - chars[i])) - 1] :
+                    chars[i] = chars[i] + shift;
+            }
         }
 
         if (chars[i] >= 97 && chars[i] <= 122) {
